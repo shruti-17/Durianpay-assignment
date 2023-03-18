@@ -37,4 +37,5 @@ jobs:
 
     - name: Deploy Docker image to EC2 instance
       run: |
+        hostname -i 
         ssh -o StrictHostKeyChecking=no ec2-user@54.87.177.162 "docker pull shru2317/test:latest && docker stop nginx && docker rm nginx && docker run -d -p 80:80 --name nginx shru2317/test:latest"
