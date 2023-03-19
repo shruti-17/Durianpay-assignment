@@ -34,10 +34,7 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-    - name: Install Docker
-      uses: docker/setup-docker@v2
-      with:
-         docker-version: '20.10.8'
+  
 
     - name: Deploy Docker image to EC2 instance
       run: |
